@@ -1,0 +1,118 @@
+:root {
+  --color-light: #fff;
+  --color-dark: #232134;
+  --color-grey100: #F5F5F6;
+  --color-grey200: #EAEBED;
+  --color-grey300: #D5D6DC;
+  --color-grey500: #ACADB9;
+  --color-grey600: #7B7C88;
+  --color-blue100: #DEECFF;
+  --color-blue200: #C9E0FF;
+  --color-blue300: #B7D6FF;
+  --color-blue400: #92C1FF;
+  --color-blue500: #5E96FC;
+  --color-blue600: #3B7CD3;
+
+  --font-family-poppins: 'Poppins', sans-serif;
+  --font-size-poppins-semi-bold: 24px;
+  --line-height-poppins-semi-bold: 30px;
+  --font-weight-poppins-semi-bold: 600;
+  --font-poppins-semi-bold: var(--font-weight-poppins-semi-bold) var(--font-size-poppins-semi-bold) / var(--line-height-poppins-semi-bold) var(--font-family-poppins);
+
+  --font-size-poppins-regular: 20px;
+  --line-height-poppins-regular: 21px;
+  --font-weight-poppins-regular: 400;
+  --font-poppins-regular: var(--font-weight-poppins-regular) var(--font-size-poppins-regular) / var(--line-height-poppins-regular) var(--font-family-poppins);
+
+  --font-family-roboto: 'Roboto', sans-serif;
+  --font-size-roboto: 20px;
+  --line-height-roboto: 21px;
+  --font-weight-roboto: 400;
+  --font-roboto: var(--font-weight-roboto) var(--font-size-roboto) / var(--line-height-roboto) var(--font-family-roboto);
+
+
+  --font-family-sans: 'Open Sans', sans-serif;
+  --font-size-sans: 14px;
+  --line-height-sans: 22px;
+  --font-weight-sans: 600;
+  --font-sans: var(--font-weight-sans) var(--font-size-sans) / var(--line-height-sans) var(--font-family-sans);
+
+
+  --font-family-inter: 'Inter', sans-serif;
+  --font-size-inter-medium-m: 14px;
+  --line-height-inter-medium-m: 20px;
+  --font-weight-inter-medium-m: 500;
+  --font-inter-medium-m: var(--font-weight-inter-medium-m) var(--font-size-inter-medium-m) / var(--line-height-inter-medium-m) var(--font-family-inter);
+
+  --font-size-inter-medium-l: 16px;
+  --line-height-inter-medium-l: 20px;
+  --font-weight-inter-medium-l: 500;
+  --font-inter-medium-l: var(--font-weight-inter-medium-l) var(--font-size-inter-medium-l) / var(--line-height-inter-medium-l) var(--font-family-inter);
+
+
+  --font-size-inter-regular-m: 14px;
+  --line-height-inter-regular-m: 20px;
+  --font-weight-inter-regular-m: 400;
+  --font-inter-regular-m: var(--font-weight-inter-regular-m) var(--font-size-inter-regular-m) / var(--line-height-inter-regular-m) var(--font-family-inter);
+
+  --font-size-inter-regular-l: 16px;
+  --line-height-inter-regular-l: 20px;
+  --font-weight-inter-regular-l: 400;
+  --font-inter-regular-l: var(--font-weight-inter-regular-l) var(--font-size-inter-regular-l) / var(--line-height-inter-regular-l) var(--font-family-inter);
+
+
+  --font-size-inter-semi-bold-m: 16px;
+  --line-height-inter-semi-bold-m: 20px;
+  --font-weight-inter-semi-bold-m: 600;
+  --font-inter-semi-bold-m: var(--font-weight-inter-semi-bold-m) var(--font-size-inter-semi-bold-m) / var(--line-height-inter-semi-bold-m) var(--font-family-inter);
+
+  --font-size-inter-semi-bold-l: 20px;
+  --line-height-inter-semi-bold-l: 24px;
+  --font-weight-inter-semi-bold-l: 600;
+  --font-inter-semi-bold-l: var(--font-weight-inter-semi-bold-l) var(--font-size-inter-semi-bold-l) / var(--line-height-inter-semi-bold-l) var(--font-family-inter);
+
+  --font-size-inter-bold-m: 16px;
+  --line-height-inter-bold-m: 20px;
+  --font-weight-inter-bold-m: 700;
+  --font-inter-bold-m: var(--font-weight-inter-bold-m) var(--font-size-inter-bold-m) / var(--line-height-inter-bold-m) var(--font-family-inter);
+
+  --font-size-inter-bold-l: 20px;
+  --line-height-inter-bold-l: 20px;
+  --font-weight-inter-bold-l: 700;
+  --font-inter-bold-l: var(--font-weight-inter-bold-l) var(--font-size-inter-bold-l) / var(--line-height-inter--bold-l) var(--font-family-inter);
+
+  --font-size-inter-semi-bold-xl: 28px;
+  --line-height-inter-semi-bold-xl: 34px;
+  --font-weight-inter-semi-bold-xl: 700;
+  --font-inter-semi-bold-xl: var(--font-weight-inter-semi-bold-xl) var(--font-size-inter-semi-bold-xl) / var(--line-height-inter-semi-bold-xl) var(--font-family-inter);
+
+  --font-size-inter-regular-lh: 16px;
+  --line-height-inter-regular-lh: 22px;
+  --font-weight-inter-regular-lh: 400;
+  --font-inter-regular-lh: var(--font-weight-inter-regular-lh) var(--font-size-inter-regular-lh) / var(--line-height-inter-regular-lh) var(--font-family-inter);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+
+body {
+  font-family: 'Inter', 'Poppins', 'Roboto', 'Open Sans', sans-serif;
+
+
+  background: var(--color-grey100);
+  color: var(--color-dark)
+}
+

@@ -1,0 +1,22 @@
+.Header {
+  padding: 27px 0;
+
+  background: var(--color-light);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-right: 280px;
+}
+
+.innerWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.mr60 {
+  margin-right: 60px;
+}
