@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 
-import { useSelector } from 'react-redux'
-
-import { DataSchema, getAccessToken, MainPage, MainPageSchema, setData } from 'pagesLayer/MainPage'
+import { setAccessToken } from 'features/loginByPassword'
+import { MainPage } from 'pagesLayer/MainPage'
 import { _API_, client_id, client_secret, headers, hr, login, password } from 'shared/const/baseUrl'
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
 
@@ -15,7 +14,7 @@ export const getServerSideProps = async () => {
     }
   )
 
-  const data: DataSchema = await res.json()
+  const data = await res.json()
 
   if (!data) {
     return {
@@ -26,14 +25,23 @@ export const getServerSideProps = async () => {
   return { props: { data } }
 }
 
-export default function Home({ data }: MainPageSchema) {
-  const dispatch = useAppDispatch()
-  const tok = useSelector(getAccessToken)
+interface HomeProps {
+  data: {
+    access_token: string
+    refresh_token: string
+    ttl: number
+    expires_in: number
+    token_type: string
+    reg_user_resumes_count: number
+  }
+}
 
-  console.log(tok)
+export default function Home({ data }: HomeProps) {
+  const dispatch = useAppDispatch()
+  const { access_token } = data
 
   useEffect(() => {
-    dispatch(setData({ data }))
+    dispatch(setAccessToken(access_token))
   }, [dispatch])
 
   return <MainPage />
