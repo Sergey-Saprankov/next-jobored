@@ -2,6 +2,7 @@ import './styles/globals.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
+import { StoreProvider } from 'pages/providers/StoreProvider/ui/StoreProvider'
 import { Header } from 'widgets/Header'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -15,8 +16,12 @@ export default function App({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
       </Head>
-      <Header />
-      <Component {...pageProps} />
+      <StoreProvider>
+        <Header />
+        <main>
+          <Component {...pageProps} />
+        </main>
+      </StoreProvider>
     </>
   )
 }

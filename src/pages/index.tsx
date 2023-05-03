@@ -1,19 +1,40 @@
-import { Inter } from 'next/font/google'
+import { useEffect } from 'react'
 
-import Star from 'shared/assets/icon/star.svg'
-import { Text, TextColorTheme, TextFontTheme } from 'shared/ui/Text/Text'
+import { useSelector } from 'react-redux'
 
-const inter = Inter({ subsets: ['latin'] })
+import { DataSchema, getAccessToken, MainPage, MainPageSchema, setData } from 'pagesLayer/MainPage'
+import { _API_, client_id, client_secret, headers, hr, login, password } from 'shared/const/baseUrl'
+import { useAppDispatch } from 'shared/hooks/useAppDispatch'
 
-export default function Home() {
-  return (
-    <>
-      <Text tag={'h1'} font={TextFontTheme.INTER_BOLD_XL} color={TextColorTheme.BLUE_600}>
-        h1
-      </Text>
-      <Text tag={'h2'}>h2</Text>
-      <Text tag={'h3'}>h3</Text>
-      <Star />
-    </>
+export const getServerSideProps = async () => {
+  const res = await fetch(
+    `${_API_}/2.0/oauth2/password/?login=${login}&password=${password}&client_id=${client_id}&client_secret=${client_secret}&hr=${hr}`,
+    {
+      headers: headers,
+      method: 'GET',
+    }
   )
+
+  const data: DataSchema = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return { props: { data } }
+}
+
+export default function Home({ data }: MainPageSchema) {
+  const dispatch = useAppDispatch()
+  const tok = useSelector(getAccessToken)
+
+  console.log(tok)
+
+  useEffect(() => {
+    dispatch(setData({ data }))
+  }, [dispatch])
+
+  return <MainPage />
 }
