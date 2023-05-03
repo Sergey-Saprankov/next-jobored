@@ -14,13 +14,13 @@ export enum TextFontTheme {
   INTER_SEMI_BOLD_L = 'interSemiBoldL',
   INTER_BOLD_M = 'interBoldM',
   INTER_BOLD_L = 'interBoldL',
-  INTER_BOLD_XL = 'interBoldL',
+  INTER_BOLD_XL = 'interBoldXL',
   INTER_REGULAR_LH = 'interRegularLH',
   INTER_MEDIUM_M = 'interMediumM',
   INTER_MEDIUM_L = 'interMediumL',
 }
 
-enum TextColorTheme {
+export enum TextColorTheme {
   GREY_500 = 'grey500',
   GREY_600 = 'grey600',
   DARK = 'dark',
@@ -33,13 +33,16 @@ interface TextProps {
   tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'p'
   children: ReactNode
   className?: string
-  theme?: TextFontTheme
+  font?: TextFontTheme
+  color?: TextColorTheme
 }
 
 export const Text: FC<TextProps> = memo(
-  ({ children, tag, className = '', theme = 'poppinsSemiBold' }) => {
+  ({ children, tag, className = '', font = 'interRegularM', color = 'dark' }) => {
     const Tag = tag
 
-    return <Tag className={classNames(cls.Text, {}, [className, cls[theme]])}>{children}</Tag>
+    return (
+      <Tag className={classNames(cls.Text, {}, [className, cls[font], cls[color]])}>{children}</Tag>
+    )
   }
 )
